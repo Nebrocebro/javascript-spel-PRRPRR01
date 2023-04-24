@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=MuseoModerno">
+    <script src="https://kit.fontawesome.com/e3e909e3dd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="dropdown">
+        <div id="hamburger"></div>
+        <div class="dropdown-content">
+            <button class="header-item easy">Easy</button>
+            <button class="header-item medium">Medium</button>
+            <button class="header-item hard">Hard</button>
+        </div>
+    </div>
+    <div id="box">
+        <!-- <img src="cell-explosion.gif" alt="" id="lost-gif"> -->
+        <h2 id="game-title">MINECHECKER!</h2><hr><br><br>
+        <div id="lost" style="display: none;">
+            <h3 id="lost-text">You got bombed!</h3>
+            <button id="new-game-button" type="button" onclick="reload()">Restart</button>
+        </div>
+           <div id="field"></div>
+           <br>     
+    </div>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
