@@ -63,11 +63,11 @@ body {
   border: none;
 }
 
-/* .dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover {
   background: #137DCD;
-} */
+}
 
 .menu-button {
     width: fit-content;
@@ -120,6 +120,12 @@ body {
     stroke-dashoffset: -134;
     stroke-width: 6;
   }
+
+#container {
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+}  
   
 
 /* GAME STYLE */
@@ -133,14 +139,9 @@ h2, h3{
   height: fit-content;
 }
 
-/* #lost-gif {
-  z-index: 10;    
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  position: absolute;
-} */
+#lostGif {
+  display: none;
+}
 
 #field table {
   border-collapse: collapse;
@@ -151,7 +152,7 @@ h2, h3{
 }
 
 #field table td {
-  background-color: rgb(195, 195, 195);
+  /* background-color: rgb(109, 192, 74); */
   width: 30px;
   min-width: 30px;
   height: 30px;
@@ -159,14 +160,65 @@ h2, h3{
   border: 1px solid black;    
 }
 
-#new-game-button {
-  width: 100px;
-  height: 30px;
+/* tr:nth-child(n + 1) > td:nth-child(2n + 1) {
+  background-color: #009170;
+}
+
+tr:nth-child(n) > td:nth-child(2n) {
+  background-color: #50c878;
+} */
+
+tr:nth-child(even) td:nth-child(odd),
+tr:nth-child(odd) td:nth-child(even) {
+  background-color: #50c878;
+}
+
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd) {
+  background-color: #009170;
+}
+
+#hud {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+}
+
+#restartButton {
+  display: none;
+  width: 120px;
+  height: 50px;
   background-color:rgb(195, 195, 195);
   color: black;
   font-weight: bolder;
   border-radius: 20px 20px 20px 20px;
   font-size: 100%;
+  margin-bottom: 1vh;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+#restartButton:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#startButton {
+  display: block;
+  width: 120px;
+  height: 50px;
+  background-color:rgb(195, 195, 195);
+  color: black;
+  font-weight: bolder;
+  border-radius: 20px 20px 20px 20px;
+  font-size: 100%;
+  margin-bottom: 1vh;
+  cursor: pointer;
+}
+
+#startButton:hover {
+  background: rgba(195, 195, 195, 0.75);
 }
 
 #difficulty-display {
@@ -175,22 +227,69 @@ h2, h3{
   color: white;
 }
 
-#easy-difficulty {
+#easyDifficulty {
   background-color: #36E774;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
 }
 
-#medium-difficulty {
+#easyDifficulty:hover {
+  background-color: #23a350;
+}
+
+#mediumDifficulty {
   background-color: #FFFC5C;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
 }
 
-#hard-difficulty {
+#mediumDifficulty:hover {
+  background-color: #bfbd2f;
+}
+
+#hardDifficulty {
   background-color: #C84153;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+}
+
+#hardDifficulty:hover {
+  background-color: #a52b3b;
+}
+
+@keyframes rubberband {
+  0%{
+      transform: scaleX(1);
+  }
+  40%{
+      transform: scaleX(1.12) scaleY(0.75);
+  }
+  55%{
+      transform: scaleX(0.85) scaleY(1);
+  }
+  65%{
+      transform: scaleX(1.09) scaleY(0.85);
+  }
+  75%{
+      transform: scaleX(0.9)  scaleY(1);
+  }
+  90%{
+      transform: scaleX(1.05) scaleY(0.95);
+  }
+  100%{
+      transform: scaleX(1) scaleY(1);
+  }
 }
 
 #game-title {
-  font-size: 130%;
+  font-size: 275%;
+  border-bottom: solid white 1px;
+  animation: rubberband 1s;
 }
 
-#lost-text {
+#lostText {
   font-size: 120%;
 }

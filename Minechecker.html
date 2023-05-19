@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Game</title>
+    <link rel="stylesheet" href="game.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=MuseoModerno"
+    />
+    <script
+      src="https://kit.fontawesome.com/e3e909e3dd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="dropdown">
+      <div id="hamburger"></div>
+      <div class="dropdown-content">
+        <button class="header-item" id="easyDifficulty" onclick="changeEasy()">
+          Easy
+        </button>
+        <button
+          class="header-item"
+          id="mediumDifficulty"
+          onclick="changeMedium()"
+        >
+          Medium
+        </button>
+        <button class="header-item" id="hardDifficulty" onclick="changeHard()">
+          Hard
+        </button>
+      </div>
+    </div>
+    <div id="container">
+      <h1 id="difficultytext">Change the difficulty here!</h1>
+    </div>
+    <div id="box">
+      <img src="cell-explosion.gif" alt="" id="lostGif" />
+      <h2 id="game-title">MINECHECKER!</h2>
+      <div id="hud">
+        <h3 id="lostText" style="display: none">You got bombed!</h3>
+        <h3 id="wonText" style="display: none">You won!</h3>
+        <button id="startButton" type="button" onclick="startGame()">
+          Start game!
+        </button>
+        <button id="restartButton" type="button" onclick="reload()">
+          Try Again!
+        </button>
+      </div>
+      <div id="field"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
